@@ -1,0 +1,251 @@
+Golang in an hour
+A talk for Torino Coding Society
+11 May 2015
+
+Gianfranco Reppucci
+Software developer, Qurami
+gianfranco.reppucci@qurami.net
+http://qurami.com
+@giefferre
+
+
+* Hello World!
+
+.image img/giefferre.jpg 250 _
+
+- Software developer [[http://qurami.com][@Qurami]]
+- Founder [[http://meetup.com/AppsterdamMilan][@AppsterdamMilan]]
+- Golang developer & enthusiast
+
+
+* Disclaimer
+
+Code crusaders? No, thanks
+
+.image img/codecrusader.jpg 400 _
+
+
+* Disclaimer (cont.)
+
+We'll talk about a potential replacement for C or Java, not for PHP
+
+
+* Development evolution
+
+- From _monolithic_code_ to _microservices_
+- From "all-inclusive frameworks" to bootstrapping frameworks with dependency managers
+- From C to ?
+
+
+* Context
+
+- There is a lot of different programming languages available to developers
+- Some of them are pretty easy, some others have great performances
+- We can find frameworks, plugins and extensions for each of them
+
+
+* Start using something modern
+
+* 
+
+.image img/gopher_yellow.png 300 _
+
+.caption *Go*is*an*open*source*programming*language*
+.caption *that*makes*it*easy*to*build*simple,*reliable*and*efficient*software.*
+.caption quote from golang.org
+
+
+* Agenda
+
+- Introduction
+- Basics
+- Go is about composition
+# - Parallelism and synchronization
+# - Why Go
+# - Tips
+# - Reference
+
+
+* Introduction
+
+* History
+
+- *2007*: first experiment
+- *2009*: public launch
+- *2011*: integration in Google App Engine
+- *2012*: release of version 1
+- *2015*: support for mobile devices _(_v._>=_1.5)_
+
+
+* Batteries included
+
+- Lightweight runtime components (garbage collector, scheduler, etc.)
+- Two compilers (gc or gccgo)
+- Plenty of standard libraries
+- Documentation
+- Formatter
+
+# compiled, strongly typed language, featuring advanced tools
+# simple: easily readable code
+# reliable: it's open sourced, it is secure, but it's backed from big G
+# efficient: made for performance
+
+
+* Key points
+
+- Absolutely genuine
+- Performance driven
+- (Quite) Easy to use
+
+
+* Advantages
+
+- Syntax and environments are similar to dynamic languages
+- Simple language specification
+- Powerful and lightweight
+
+* 
+
+.image img/biplane.jpg 300 _
+
+.caption *Go*sits*somewhere*between*C*and*Python.*
+.caption *It*has*the*static*type*checking*and*bit-twiddling*powers*of*C,*
+.caption *yet*much*of*the*speed*of*development*and*conciseness*of*Python*
+.caption quote from Graham King
+
+
+* Basics
+
+* First things first
+
+.play code/helloworld.go
+
+
+* First things first (cont.)
+
+.play code/helloworld.go
+
+- _package_ determines the namespace
+- it CANNOT be omitted
+- if you are not writing a package, it shall be *main*
+
+
+* First things first (cont.)
+
+    import "fmt"
+
+ 
+
+    import (
+        "fmt"
+        "net/http"
+        "code.google.com/p/goconf/conf"
+        "github.com/garyburd/redigo/redis"
+    )
+
+- _import_ loads one or more packages
+- packages could be imported even remotely, from Googlecode or Github
+
+
+* Variables and scope
+
+.code code/variables.go /START1/,/STOP1/
+
+is equivalent to:
+
+.code code/variables.go /START2/,/STOP2/
+
+Check it out:
+
+.play code/variables.go /START3/,/STOP3/
+
+
+* Variables and scope (cont.)
+
+Be aware of the scope!
+
+.play code/scope.go /START1/,/STOP1/
+
+
+* Methods
+
+Methods are declared with the keyword *func* as follows:
+
+.play code/methods.go /START1/,/STOP1/
+
+
+* Error handling
+
+There is no exception, only errors
+
+    file, err := os.Open(filePath)
+    if err != nil {
+        return err
+    }
+
+    codeUsing(file)
+
+*PRO*: easily readable code
+*CON*: error handling is 100% up to you
+
+
+* Go is about composition
+
+* Structs
+
+While Java or C are about _inheritance_, Go is about _composition_
+
+Go is Object Oriented, but not in the usual way
+
+In fact:
+- No class inheritance
+- No method or operator overloading
+- No circular dependencies among packages
+
+
+* The Person struct
+
+Let's define the struct _Person_
+
+.code code/structs.go /START1/,/STOP1/
+
+With its own methods...
+
+.code code/structs.go /START2/,/STOP2/
+
+
+* The Person struct (cont.)
+
+And of course a constructor-like factory method:
+
+.code code/structs.go /START3/,/STOP3/
+
+
+* The Person struct (cont.)
+
+We'll use the struct Person as follows:
+
+.code code/structs.go /START7/,/STOP7/
+.code code/structs.go /START8/,/STOP8/
+
+
+* The Student struct
+
+Let's *compose* a new struct _Student_ by using the previous struct:
+
+.code code/structs.go /START4/,/STOP4/
+.code code/structs.go /START5/,/STOP5/
+
+
+* The Student struct (cont.)
+
+And constructor as usual:
+
+.code code/structs.go /START6/,/STOP6/
+
+
+* Putting it all together
+
+As simple as that:
+
+.play code/structs.go /START9/,/STOP9/
