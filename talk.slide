@@ -60,7 +60,7 @@ We'll talk about a potential replacement for C or Java, not for PHP
 - Introduction
 - Basics
 - Go is about composition
-# - Parallelism and synchronization
+- Parallelism and synchronization
 # - Why Go
 # - Tips
 # - Reference
@@ -249,3 +249,22 @@ And constructor as usual:
 As simple as that:
 
 .play code/structs.go /START9/,/STOP9/
+
+
+* Parallelism and synchronization
+
+
+* Goroutines
+
+A _goroutine_ is a lightweight thread.
+
+To launch a goroutine, use the *go* keyword before a function.
+
+.play code/goroutines.go /START1/,/STOP1/
+
+
+* Goroutines (cont.)
+
+Goroutines can also use anonymouse methods
+
+.play code/goroutines_anon.go /START1/,/STOP1/
