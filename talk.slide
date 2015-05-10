@@ -25,9 +25,18 @@ Code crusaders? No, thanks
 .image img/codecrusader.jpg 400 _
 
 
-* Disclaimer (cont.)
+* Agenda
 
-We'll talk about a potential replacement for C or Java, not for PHP
+- Introduction
+- Basics
+- Go is about composition
+- Parallelism and synchronization
+- What I learned
+# - Tips & Tricks
+- Reference
+
+
+* Introduction
 
 
 * Development evolution
@@ -44,9 +53,12 @@ We'll talk about a potential replacement for C or Java, not for PHP
 - We can find frameworks, plugins and extensions for each of them
 
 
-* Start using something modern
-
 * 
+
+.image img/indiana.jpg 520 _
+
+
+* Start using something modern
 
 .image img/gopher_yellow.png 300 _
 
@@ -54,19 +66,6 @@ We'll talk about a potential replacement for C or Java, not for PHP
 .caption *that*makes*it*easy*to*build*simple,*reliable*and*efficient*software.*
 .caption quote from golang.org
 
-
-* Agenda
-
-- Introduction
-- Basics
-- Go is about composition
-- Parallelism and synchronization
-- What I learned
-# - Tips & Tricks
-- Reference
-
-
-* Introduction
 
 * History
 
@@ -77,6 +76,14 @@ We'll talk about a potential replacement for C or Java, not for PHP
 - *2015*: support for mobile devices _(_v._>=_1.5)_
 
 
+* Key points
+
+- Strongly typed language, featuring advanced tools
+- Absolutely genuine: syntax and environments are similar to dynamic languages
+- Performance driven
+- It's open sourced, it is secure
+
+
 * Batteries included
 
 - Lightweight runtime components (garbage collector, scheduler, etc.)
@@ -85,24 +92,17 @@ We'll talk about a potential replacement for C or Java, not for PHP
 - Documentation
 - Formatter
 
-# compiled, strongly typed language, featuring advanced tools
-# simple: easily readable code
-# reliable: it's open sourced, it is secure, but it's backed from big G
-# efficient: made for performance
 
+* Formatter
 
-* Key points
+From this...
 
-- Absolutely genuine
-- Performance driven
-- (Quite) Easy to use
+.image img/code_mess.png 200 _
 
+To this :)
 
-* Advantages
+.image img/code_clean.png 200 _
 
-- Syntax and environments are similar to dynamic languages
-- Simple language specification
-- Powerful and lightweight
 
 * 
 
@@ -123,7 +123,7 @@ We'll talk about a potential replacement for C or Java, not for PHP
 
 * First things first (cont.)
 
-.play code/helloworld.go
+.code code/helloworld.go
 
 - _package_ determines the namespace
 - it CANNOT be omitted
@@ -145,6 +145,13 @@ We'll talk about a potential replacement for C or Java, not for PHP
 
 - _import_ loads one or more packages
 - packages could be imported even remotely, from Googlecode or Github
+
+
+* First things first (cont.)
+
+.code code/helloworld.go
+
+- fmt is a _formatting_ library
 
 
 * Variables and scope
@@ -185,9 +192,7 @@ There is no exception, only errors
 
     codeUsing(file)
 
-*PRO*: easily readable code
-*CON*: error handling is 100% up to you
-
+If you forget to handle and error, the application will probably crash!
 
 * Go is about composition
 
@@ -201,6 +206,11 @@ In fact:
 - No class inheritance
 - No method or operator overloading
 - No circular dependencies among packages
+
+
+* 
+
+.image img/zak.jpg 520 _
 
 
 * The Person struct
@@ -229,6 +239,11 @@ We'll use the struct Person as follows:
 .code code/structs.go /START8/,/STOP8/
 
 
+* 
+
+.image img/bernard.png 520 _
+
+
 * The Student struct
 
 Let's *compose* a new struct _Student_ by using the previous struct:
@@ -252,6 +267,11 @@ As simple as that:
 
 
 * Parallelism and synchronization
+
+
+* 
+
+.image img/parallelism.jpg 520 _
 
 
 * Goroutines
@@ -312,11 +332,10 @@ It is useful to implement synchronization!
 
 * PROs
 
-- Go is *really* readable
+- Explicit is better than implicit: Go code is _really_readable_
 - Concurrency is super-easy
 - Your application ships within a single binary file - no extra dependencies!
 - Your application runs on (almost) any platform
-- Explicit is better than implicit
 
 
 * Warnings
@@ -338,6 +357,36 @@ It is useful to implement synchronization!
 - The learning curve is quite high, but you'll have better programmers
 
 
+* Tips & Tricks 
+
+
+* Test suite
+
+Care about *TDD* (_you_should!_)?
+
+You can use the *go*test* native tool, or use a more advanced suite like *Goconvey*
+
+Project site is [[http://goconvey.co]]
+
+
+* Installing multiple Go versions
+
+Do you need to use different versions of Go?
+
+Do not mess your environment, use the *Go*Version*Manager* tool!
+
+Instructions are available at [[https://github.com/moovweb/gvm]]
+
+
+* Want to create a keynote like this?
+
+Use the *present* tool!
+
+It is a native golang solution, available as a package, to run slides and code within your browser.
+
+Check it out at [[https://godoc.org/golang.org/x/tools/present]]
+
+
 * Reference
 
 .link http://reneefrench.blogspot.com The gopher images, by Renee French
@@ -346,3 +395,8 @@ It is useful to implement synchronization!
 .link http://blog.iron.io/2013/03/how-we-went-from-30-servers-to-2-go.html How we went from 30 servers to 2, by Travis Reeder
 .link http://blog.iron.io/2013/08/go-after-2-years-in-production.html Go after 2 years in production, by Travis Reeder
 .link http://www.slideshare.net/jpetazzo/docker-and-go-why-did-we-decide-to-write-docker-in-go Docker and Go: why did we decide to write docker in Go?
+
+
+* 
+
+.image img/the_end.jpg 520 _
