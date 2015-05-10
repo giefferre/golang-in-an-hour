@@ -61,9 +61,9 @@ We'll talk about a potential replacement for C or Java, not for PHP
 - Basics
 - Go is about composition
 - Parallelism and synchronization
-# - Why Go
-# - Tips
-# - Reference
+- What I learned
+# - Tips & Tricks
+- Reference
 
 
 * Introduction
@@ -301,6 +301,48 @@ The _select_ statement is like a switch statement, but it selects over channel o
 
 It is useful to implement synchronization!
 
+
 * The beacon, using select
 
 .play code/select.go /START1/,/STOP1/
+
+
+* What I learned
+
+
+* PROs
+
+- Go is *really* readable
+- Concurrency is super-easy
+- Your application ships within a single binary file - no extra dependencies!
+- Your application runs on (almost) any platform
+- Explicit is better than implicit
+
+
+* Warnings
+
+- Be aware of error handling
+- Sometimes you'll write real "low-level" code
+
+
+* CONs
+
+- No generics, sorry
+- Package versioning is not handled at all
+
+
+* From an entrepreneur's point of view
+
+- The language is born and supported from Google
+- [[https://github.com/golang/go/wiki/GoUsers][The list of Golang users is growing up extremely fast]], you're not alone
+- The learning curve is quite high, but you'll have better programmers
+
+
+* Reference
+
+.link http://reneefrench.blogspot.com The gopher images, by Renee French
+.link http://matt.aimonetti.net/posts/2013/08/27/what-technology-should-my-startup-use What technology should my startup use?, by Matt Aimonetti
+.link http://www.darkcoding.net/software/go-lang-after-four-months/ Go after four months, by Graham King
+.link http://blog.iron.io/2013/03/how-we-went-from-30-servers-to-2-go.html How we went from 30 servers to 2, by Travis Reeder
+.link http://blog.iron.io/2013/08/go-after-2-years-in-production.html Go after 2 years in production, by Travis Reeder
+.link http://www.slideshare.net/jpetazzo/docker-and-go-why-did-we-decide-to-write-docker-in-go Docker and Go: why did we decide to write docker in Go?
