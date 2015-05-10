@@ -387,6 +387,17 @@ It is a native golang solution, available as a package, to run slides and code w
 Check it out at [[https://godoc.org/golang.org/x/tools/present]]
 
 
+* Golang hands on, within your browser
+
+Start using Go easily!
+
+Point your browser to [[http://play.golang.org]].
+
+.image img/playground.png 400 _
+
+
+
+
 * Reference
 
 .link http://reneefrench.blogspot.com The gopher images, by Renee French
