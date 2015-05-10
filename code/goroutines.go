@@ -22,7 +22,7 @@ func main() {
 	// seeding the random generator :)
 	rand.Seed(time.Now().UTC().UnixNano())
 
-	go fuzzBuzz("Zack")
+	go fuzzBuzz("Zak")
 	go fuzzBuzz("Yak")
 	go fuzzBuzz("Yakketi")
 	go fuzzBuzz("Yakk!")

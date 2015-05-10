@@ -12,15 +12,13 @@ func pause() {
 
 // START1 OMIT
 func main() {
-	// seeding the random generator :)
-	rand.Seed(time.Now().UTC().UnixNano())
-
+	rand.Seed(time.Now().UTC().UnixNano()) //OMIT
 	go func(word string) {
 		randomTime := time.Duration(rand.Intn(5000)) * time.Millisecond
 		time.Sleep(randomTime)
 
 		fmt.Println(word)
-	}("Zack, Zack, Zack... Come devo fare con te?")
+	}("Zak, Zak, Zak... What am I going to do with you?")
 
 	pause()
 	fmt.Println("Quit!")

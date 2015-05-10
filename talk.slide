@@ -268,3 +268,39 @@ To launch a goroutine, use the *go* keyword before a function.
 Goroutines can also use anonymouse methods
 
 .play code/goroutines_anon.go /START1/,/STOP1/
+
+
+* Channels
+
+Channels allow you to pass data between running goroutines.
+
+They can be _buffered_ or _unbuffered_.
+
+You can build a channel from any kind of data structure!
+
+    ch := make(chan int)
+
+    // insert a value into the channel
+    ch <- 5
+
+    // read data from the channel
+    var readValue int
+    readValue = <-ch
+
+    // readValue is 5
+
+
+* The beacon
+
+.play code/channels.go /START1/,/STOP1/
+
+
+* Select
+
+The _select_ statement is like a switch statement, but it selects over channel operations using a first-come, first-served logic.
+
+It is useful to implement synchronization!
+
+* The beacon, using select
+
+.play code/select.go /START1/,/STOP1/
