@@ -346,8 +346,21 @@ It is useful to implement synchronization!
 
 * CONs
 
-- No generics, sorry
-- Package versioning is not handled at all
+No generics, sorry!
+
+There are two ways to decode JSON, XML or objects in other formats to Golang structs:
+
+- If you know the exact model, via the _Unmarshal_ method
+- If you don't know the attributes of your model, do _type_assertion_
+
+
+* CONs (cont.)
+
+Package versioning is not handled at all :(
+
+An update of a remote package could break compatibility!
+
+Your application will not build anymore
 
 
 * From an entrepreneur's point of view
