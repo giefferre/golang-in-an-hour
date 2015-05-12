@@ -27,7 +27,7 @@ func main() {
 	go fuzzBuzz("Yakketi")
 	go fuzzBuzz("Yakk!")
 
-	pause()
+	pause() // waits for a while
 	fmt.Println("Quit!")
 }
 

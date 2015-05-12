@@ -9,7 +9,7 @@ func main() {
     aValue := "Change me!"
 
     if true {
-        aValue := "!em egnahC"
+        aValue := "!em egnahC" // Something's wrong here
 
         fmt.Println(aValue)
     }

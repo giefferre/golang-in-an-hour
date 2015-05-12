@@ -41,6 +41,6 @@ func main() {
 	go beacon(channel)
 	go aMoreSecureShip(channel)
 
-	pause()
+	pause() // waits for a while
 	fmt.Println("Quit!")
 }

@@ -156,11 +156,11 @@ To this :)
 
 * Variables and scope
 
-.code code/variables.go /START1/,/STOP1/
+.code code/variables.go /START2/,/STOP2/
 
 is equivalent to:
 
-.code code/variables.go /START2/,/STOP2/
+.code code/variables.go /START1/,/STOP1/
 
 Check it out:
 

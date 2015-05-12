@@ -13,7 +13,12 @@ func main() {
 	a := 7
 	b := 5
 
-	output := fmt.Sprintf("Given a %d, b %d \nThe sum is: %d", a, b, Sum(a, b))
+	output := fmt.Sprintf(
+		"Given a %d, b %d \nThe sum is: %d",
+		a,
+		b,
+		Sum(a, b),
+	)
 	fmt.Println(output)
 }
 

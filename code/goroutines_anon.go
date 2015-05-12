@@ -20,7 +20,7 @@ func main() {
 		fmt.Println(word)
 	}("Zak, Zak, Zak... What am I going to do with you?")
 
-	pause()
+	pause() // waits for a while
 	fmt.Println("Quit!")
 }
 
